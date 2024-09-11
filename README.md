@@ -7,61 +7,76 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Painel de Cadastro de Projetos de Energia Solar
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Descrição
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Este projeto é um painel de controle para o gerenciamento de projetos de energia solar. Ele permite o cadastro e gerenciamento de projetos, clientes e equipamentos associados.
 
-## Learning Laravel
+## Requisitos
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Docker:** Usado para rodar o MySQL.
+- **PHP:** Requer PHP para rodar o Laravel.
+- **Node.js e npm:** Usados para o desenvolvimento e construção dos assets frontend.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Configuração e Execução
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+### 1. Rodar o Servidor Laravel
+Para iniciar o servidor Laravel, use o comando e acesse a URL gerada:
+```bash
+php artisan serve
+ ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Rodar os Assets Frontend
+Para compilar e rodar os assets frontend:
+```bash
+npm run dev
+ ```
 
-### Premium Partners
+### 3. Configurar e Rodar o MySQL com Docker
+Certifique-se de que o Docker está instalado e configurado. Para iniciar o MySQL, use os seguintes comandos:
+```bash
+docker-compose ps # Verifica o status dos containers
+docker-compose exec mysql # Acessa o container do MySQL
+docker-compose exec mysql mysql -u root -p # Acessa o prompt do MySQL `
+ ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 4. Rodar as Migrations e Seeders
+Dentro do container Laravel, execute os seguintes comandos para rodar as migrations e seeders:
 
-## Contributing
+```bash
+# Execute as migrations
+php artisan migrate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Execute os seeders
+php artisan db:seed
+```
 
-## Code of Conduct
+### 5. Acesso ao Painel
+Após rodar o servidor e os assets frontend, você pode acessar o painel via navegador.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6. Credenciais Iniciais
+Para acessar o painel, utilize as seguintes credenciais que foram configuradas no seeder:
 
-## Security Vulnerabilities
+```bash
+### Nome: Default User
+### Email: defaultuser@example.com
+### Senha: Senha123#
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# solar-energy
+### 7. Criar Novo Usuário
+Se preferir, você também pode criar novos usuários a partir do menu superior da Home.
+
+
+###  Contribuindo
+Sinta-se à vontade para contribuir com melhorias e correções. Se você encontrar algum bug ou tiver uma sugestão, abra um issue ou envie um pull request.
+
+###  Licença
+Este projeto está licenciado sob a MIT License.
+
+
+
