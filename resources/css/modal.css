@@ -1,0 +1,20 @@
+.custom-modal .modal-dialog {
+    max-width: 80%;
+}
+
+.custom-modal .modal-body .btn-primary {
+    margin-bottom: 1rem;
+}
+
+.btn-icon {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    color: #dc3545;
+}
+
+.btn-icon:hover {
+    color: #c82333;
+}
+

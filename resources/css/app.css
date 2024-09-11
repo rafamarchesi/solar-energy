@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.azul-bg {
+    background-color: #612bf1;
+}
